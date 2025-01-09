@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test RPG Classes</title>
+</head>
+<body>
+  <h1>Testing RPG Classes</h1>
+  <script type="module">
+    import Character from './js/Character.js';
+    import Fighter from './js/Fighter.js';
+    import Paladin from './js/Paladin.js';
+    import Monk from './js/Monk.js';
+    import Berzerker from './js/Berzerker.js';
+    import Assassin from './js/Assassin.js';
+    import Game from './js/Game.js';
+
+    // Tester la classe Character
+    console.log('--- Test de Character ---');
+    const char1 = new Character("TestCharacter", 10, 3, 15);
+    char1.watchStats();
+
+    // Tester la classe Fighter
+    console.log('--- Test de Fighter ---');
+    const fighter = new Fighter("Grace");
+    fighter.watchStats();
+
+    // Tester la classe Paladin
+    console.log('--- Test de Paladin ---');
+    const paladin = new Paladin("Ulder");
+    paladin.watchStats();
+
+    // Simuler une attaque
+    console.log('--- Test d\'une attaque ---');
+    const char2 = new Character("VictimCharacter", 15, 2, 10);
+    fighter.dealDamage(char2);
+    char2.watchStats();
+
+    // Tester une attaque spéciale
+    console.log('--- Test de l\'attaque spéciale ---');
+    fighter.specialAttack(char2);
+    char2.watchStats();
+
+    // Simuler une attaque normale avec le Paladin
+    console.log('--- Test d\'une attaque normale avec Paladin ---');
+    const victim = new Character("VictimCharacter", 15, 2, 10);
+    paladin.dealDamage(victim);
+    victim.watchStats();
+
+    // Tester l'attaque spéciale du Paladin
+    console.log('--- Test de l\'attaque spéciale avec Paladin ---');
+    paladin.specialAttack(victim);
+    paladin.watchStats();
+    victim.watchStats();
+
+    // Tester la classe Monk
+    console.log('--- Test de Monk ---');
+    const monk = new Monk("Moana");
+    monk.watchStats();
+
+    // Tester l'attaque spéciale du Monk
+    console.log('--- Test de l\'attaque spéciale avec Monk ---');
+    monk.specialAttack();
+    monk.watchStats();
+
+    // Tester la classe Berzerker
+    console.log('--- Test de Berzerker ---');
+    const berzerker = new Berzerker("Draven");
+    berzerker.watchStats();
+
+    // Tester l'attaque spéciale du Berzerker
+    console.log('--- Test de l\'attaque spéciale avec Berzerker ---');
+    berzerker.specialAttack();
+    berzerker.watchStats();
+
+    // Tester la classe Assassin
+    console.log('--- Test de Assassin ---');
+    const assassin = new Assassin("Carl");
+    assassin.watchStats();
+
+    // Tester l'attaque spéciale de l'Assassin
+    console.log('--- Test de l\'attaque spéciale avec Assassin ---');
+    assassin.specialAttack(victim);
+    assassin.watchStats();
+    victim.watchStats();
+
+    // Tester la classe Game
+    console.log('--- Test de Game ---');
+    const game = new Game();
+    game.watchStats(); // Affiche les stats initiales des joueurs
+    game.startGame();  // Lance une partie complète
+
+    
+  </script>
+</body>
+</html>
